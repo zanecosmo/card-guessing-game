@@ -1,5 +1,5 @@
 # Guess It
-A game where the player is given a topic as a prompt, and they must type in words associated with that given topic. If that word matches with one of the acceptable words in the topic-list the word is revealed from underneath a card, and the player gets a point.
+A game where the player is given a topic as a prompt, and they must type in words associated with that given topic. If that word matches with one of the acceptable words in the topic-list, the word is revealed from underneath a card, and the player gets a point.
 
 My purpose for this project:
 * learn the basic concepts of ReactJS, including state, components, JSX and props.
