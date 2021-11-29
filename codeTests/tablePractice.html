@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>testTable</title>
+    </head>
+    
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #testTable {
+            position:absolute;
+            width:80%;
+            height: 80%;
+            margin:10% 0 0 10%;
+            table-layout:fixed;
+            border: 1px solid black;
+        }
+
+        .card {
+            position: absolute;
+            display:block;
+            top:0;
+            left: 0;
+            height: 10%;
+            width: 50%;
+            background-color: red;
+            opacity: 50%;
+        }
+
+        .td {
+            position: relative;
+            text-align: center;
+            height:10px;
+            width:15px;
+            border: 1px solid black;
+        }
+    </style>
+    
+    <body>
+
+        
+        <div class="container">random name</div>
+
+        <table id="testTable">
+            <tbody>
+                <tr>
+                    <td class="td"><div class="card"></div>something</td>
+                    <td class="td"><div class="card"></div>other</td>
+                </tr>
+                <tr>
+                    <td class="td">something</td>
+                    <td class="td">other</td>
+                </tr>
+                <tr>
+                    <td class="td">something</td>
+                    <td class="td">other</td>
+                </tr>
+                <tr>
+                    <td class="td">something</td>
+                    <td class="td">other</td>
+                </tr>
+                <tr>
+                    <td class="td">something</td>
+                    <td class="td">other</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <script>
+            document.addEventListener('keydown', (event) => {
+                if (event.key ==='e') {
+                    console.log("you pressd 'e!'")
+                }
+            })
+        </script>
+    
+    </body>
+</html>

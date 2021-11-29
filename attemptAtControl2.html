@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MOVE THE SQUARE</title>
+    
+        <style>
+            @keyframes transformQuadrantI {
+                0% { transform: rotateZ(45deg) }
+            }
+            
+            @keyframes transformQuadrantII {
+                0% { transform: rotate(-45deg) }
+            }
+
+            @keyframes transformQuadrantIII {
+                0% { transform: rotateZ(-135deg) }
+            } 
+            
+            @keyframes transformQuadrantIV {
+                0% { transform: rotateZ(135deg) }
+            }
+
+            #square {
+                display: block;
+                position: relative;
+                top: 150px;
+                left: 150px;
+                width: 50px;
+                height: 50px;
+                border-radius:5px;
+                background-color: red;
+                border-top: 3px solid black;
+                animation-name: "none";
+                animation-duration: .5s;
+
+                
+            }
+        </style>
+    
+    </head>
+    <body>
+
+        <div id="square"></div>
+
+        <script>
+            
+            let keys = ["w", "s", "a", "d"];
+            let keyOn = [false, false, false, false];
+            let changes = [
+            () => playerPosition[0] -= 3,
+            () => playerPosition[0] += 3,
+            () => playerPosition[1] -= 3,
+            () => playerPosition[1] += 3
+            ]
+
+            let playerObject = document.getElementById('square');
+
+            document.addEventListener('keydown', (e) => {
+                // setInterval(reRender, 20);
+
+                for (let i = 0; i < keys.length; i++) {
+                    if (e.key === keys[i]) {
+                        //setInterval(reRender, 20);
+                        keyOn[i] = true;
+                    }
+                }
+            });
+
+            document.addEventListener('keyup', (e) => {
+                for (let i = 0; i < keys.length; i++) {
+                    if (e.key === keys[i]) {
+                        keyOn[i] = false;                        
+                    }
+                }
+            })        
+
+            const reRender = () => {
+                for (let i = 0; i < keys.length; i++) {
+                    if (keyOn[i] === true) {
+                        changes[i]();      
+                        playerObject.style.left =
+                        `${playerPosition[1]}px`;
+                        playerObject.style.top = `${playerPosition[]}px`
+                    }
+                }
+            }
+
+            setInterval(reRender, 20);
+
+            let playerPosition = [0,0];
+
+
+        </script>
+
+    </body>
+</html>
